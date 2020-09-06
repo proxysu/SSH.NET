@@ -143,13 +143,13 @@ namespace Renci.SshNet
         public TimeSpan Timeout { get; set; }
 
         /// <summary>
-        /// Gets or sets the timeout to used when waiting for a server to acknowledge closing a channel.
+        /// Gets or sets the timeout to use when waiting for a server to acknowledge closing a channel.
         /// </summary>
         /// <value>
         /// The channel close timeout. The default value is 1 second.
         /// </value>
         /// <remarks>
-        /// If a server does not send a <c>SSH2_MSG_CHANNEL_CLOSE</c> message before the specified timeout
+        /// If a server does not send a <c>SSH_MSG_CHANNEL_CLOSE</c> message before the specified timeout
         /// elapses, the channel will be closed immediately.
         /// </remarks>
         public TimeSpan ChannelCloseTimeout { get; set; }
@@ -329,10 +329,10 @@ namespace Renci.SshNet
                     {"ecdh-sha2-nistp521", typeof(KeyExchangeECDH521)},
                     {"diffie-hellman-group-exchange-sha256", typeof (KeyExchangeDiffieHellmanGroupExchangeSha256)},
                     {"diffie-hellman-group-exchange-sha1", typeof (KeyExchangeDiffieHellmanGroupExchangeSha1)},
+                    {"diffie-hellman-group16-sha512", typeof(KeyExchangeDiffieHellmanGroup16Sha512)},
+                    {"diffie-hellman-group14-sha256", typeof (KeyExchangeDiffieHellmanGroup14Sha256)},
                     {"diffie-hellman-group14-sha1", typeof (KeyExchangeDiffieHellmanGroup14Sha1)},
                     {"diffie-hellman-group1-sha1", typeof (KeyExchangeDiffieHellmanGroup1Sha1)},
-                    //"gss-group1-sha1-toWM5Slw5Ew8Mqkay+al2g==" - WinSSHD
-                    //"gss-gex-sha1-toWM5Slw5Ew8Mqkay+al2g==" - WinSSHD
                 };
 
             Encryptions = new Dictionary<string, CipherInfo>
